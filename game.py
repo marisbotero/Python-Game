@@ -12,6 +12,15 @@ y = 50
 #print(array)
 
 #print (pygame.K_SPACE)
+playerImage = pygame.image.load("player.png")
+playerImage = pygame.transform.scale(playerImage, (35,40))
+playerImage = playerImage.convert_alpha()
+backgroundImage = pygame.image.load("background.png")
+backgroundImage = pygame.transform.scale(backgroundImage, (700,400))
+screen.blit(backgroundImage, (0,0))
+
+
+frame = pygame.time.Clock()
 while finished == False:#While our game is not finished
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
@@ -21,13 +30,15 @@ while finished == False:#While our game is not finished
 	             #[....,UP,DOWN,LEFT,SPACE,...]
 	if pressedKeys [pygame.K_SPACE] == 1:
 		y += 1
-	rectOne = pygame.Rect(x,y,30,30)#x,y,width,height
+	#rectOne = pygame.Rect(x,y,30,30)#x,y,width,height
 
 	color = (0,0,255) #R,G,B
-	black = (0,0,0)
-	screen.fill(black)
-	pygame.draw.rect(screen, color,rectOne)
+	white = (255,255,255)
+	screen.blit(backgroundImage, (0,0))
+	screen.blit(playerImage, (x,y))
+	#pygame.draw.rect(screen, color,rectOne)
 	pygame.display.flip()
+	frame.tick(30)
 
 
 
