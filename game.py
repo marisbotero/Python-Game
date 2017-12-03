@@ -54,6 +54,8 @@ while finished == False:#While our game is not finished
 	#pygame.draw.rect(screen, color,rectOne)
 	pygame.display.flip()
 	frame.tick(30)
+	#new
+	
 
 
 
