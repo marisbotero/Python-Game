@@ -77,7 +77,6 @@ while finished == False:#While our game is not finished
 
 	pygame.display.flip()
 	frame.tick(30)
-	#new
 	
 
 
