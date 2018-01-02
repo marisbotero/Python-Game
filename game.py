@@ -5,7 +5,7 @@ pygame.init()
 screen = pygame.display.set_mode((700,400))
 
 finished =False # 0 < 10->True 10<10->False
-x = 350 -25/2
+x = 350 -25/2 
 y = 350
 
 #array = [0,1.2,4.5,"Hello"]
@@ -32,6 +32,9 @@ treasureY = 50
 
 screen.blit(treasureImage, (treasureX, treasureY))
 
+#Text Win
+font = pygame.font.SysFont("arial", 60)
+textWin = font.render("Great Job =)", True, (0,0,0))
 
 
 frame = pygame.time.Clock()
@@ -52,6 +55,26 @@ while finished == False:#While our game is not finished
 	screen.blit(treasureImage, (treasureX, treasureY))
 	screen.blit(playerImage, (x,y))
 	#pygame.draw.rect(screen, color,rectOne)
+
+	if y >= treasureY and y <= treasureY + 40:
+		if x >= treasureX and x <= treasureX + 35:
+			screen.blit(textWin, (200,200))		
+		
+		elif x + 35 >= treasureX and x +  35 <= treasureX + 35:
+			screen.blit(textWin, (200, 200))
+
+
+	elif y + 40 >= treasureY and y + 40 <= treasureY + 40:
+		if x >= treasureX and x <= treasureX + 35:
+			screen.blit(textWin, (200, 200))
+
+		elif x + 35 >= treasureX and x + 35 <= treasureX + 35:
+			screen.blit(textWin, (200, 200))
+			
+
+	
+
+
 	pygame.display.flip()
 	frame.tick(30)
 
