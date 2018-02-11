@@ -8,24 +8,20 @@ def checkCollision(x,y,treasureX,treasureY):
 
 	if y >= treasureY and y <= treasureY + 40:
 		if x >= treasureX and x <= treasureX + 35:
-			
 			y = 350
 			collisionState = True		
 		
 		elif x + 35 >= treasureX and x +  35 <= treasureX + 35:
-			
 			y = 350	
 			collisionState = True
 
 
 	elif y + 40 >= treasureY and y + 40 <= treasureY + 40:
-		if x >= treasureX and x <= treasureX + 35:
-			
+		if x >= treasureX and x <= treasureX + 35:		
 			y = 350	
 			collisionState = True
 
-		elif x + 35 >= treasureX and x + 35 <= treasureX + 35:
-			
+		elif x + 35 >= treasureX and x + 35 <= treasureX + 35:		
 			y = 350	
 			collisionState = True
 	
@@ -65,8 +61,8 @@ treasureY = 50
 screen.blit(treasureImage, (treasureX, treasureY))
 
 #Text Win
-font = pygame.font.SysFont("arial", 40)
-textWin = font.render("Great Job =)", True, (0,0,0))
+font = pygame.font.SysFont("arial", 30)
+textWin = font.render("Great Job", True, (0,0,0))
 
 
 frame = pygame.time.Clock()
@@ -94,7 +90,9 @@ while finished == False:#While our game is not finished
 	collisionTreasure,y = checkCollision(x,y,treasureX,treasureY)
 
 	if collisionTreasure == True:
-		screen.blit(textWin, (250 - textWin.get_width()/2, 200 - textWin.get_height()/2))
+		screen.blit(textWin, (350 - textWin.get_width()/2, 200 - textWin.get_height()/2))
+		pygame.display.flip()
+		frame.tick(1)
 
 
 
