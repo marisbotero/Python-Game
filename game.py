@@ -8,24 +8,24 @@ def checkCollision(x,y,treasureX,treasureY):
 
 	if y >= treasureY and y <= treasureY + 40:
 		if x >= treasureX and x <= treasureX + 35:
-			screen.blit(textWin, (250 - textWin.get_width()/2, 200 - textWin.get_height()/2))
+			
 			y = 350
 			collisionState = True		
 		
 		elif x + 35 >= treasureX and x +  35 <= treasureX + 35:
-			screen.blit(textWin, (250 - textWin.get_width()/2, 200 - textWin.get_height()/2))
+			
 			y = 350	
 			collisionState = True
 
 
 	elif y + 40 >= treasureY and y + 40 <= treasureY + 40:
 		if x >= treasureX and x <= treasureX + 35:
-			screen.blit(textWin, (250 - textWin.get_width()/2, 200 - textWin.get_height()/2))
+			
 			y = 350	
 			collisionState = True
 
 		elif x + 35 >= treasureX and x + 35 <= treasureX + 35:
-			screen.blit(textWin, (250 - textWin.get_width()/2, 200 - textWin.get_height()/2))
+			
 			y = 350	
 			collisionState = True
 	
@@ -91,7 +91,10 @@ while finished == False:#While our game is not finished
 	screen.blit(treasureImage, (treasureX, treasureY))
 	screen.blit(playerImage, (x,y))
 	#pygame.draw.rect(screen, color,rectOne)
-	#collisionTreasure,y = checkCollision(x,y,treasureX,treasureY)
+	collisionTreasure,y = checkCollision(x,y,treasureX,treasureY)
+
+	if collisionTreasure == True:
+		screen.blit(textWin, (250 - textWin.get_width()/2, 200 - textWin.get_height()/2))
 
 
 
