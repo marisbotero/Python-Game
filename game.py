@@ -33,11 +33,15 @@ treasureY = 50
 screen.blit(treasureImage, (treasureX, treasureY))
 
 #Text Win
-font = pygame.font.SysFont("arial", 60)
+font = pygame.font.SysFont("arial", 40)
 textWin = font.render("Great Job =)", True, (0,0,0))
 
 
 frame = pygame.time.Clock()
+
+collisionTreasure = False
+
+
 while finished == False:#While our game is not finished
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
@@ -55,21 +59,23 @@ while finished == False:#While our game is not finished
 	screen.blit(treasureImage, (treasureX, treasureY))
 	screen.blit(playerImage, (x,y))
 	#pygame.draw.rect(screen, color,rectOne)
+	#collisionTreasure,y = checkCollision(x,y,treasureX,treasureY)
+
 
 	if y >= treasureY and y <= treasureY + 40:
 		if x >= treasureX and x <= treasureX + 35:
-			screen.blit(textWin, (200,200))		
+			screen.blit(textWin, (450 - textWin.get_width()/2, 200 - textWin.get_height()/2))		
 		
 		elif x + 35 >= treasureX and x +  35 <= treasureX + 35:
-			screen.blit(textWin, (200, 200))
+			screen.blit(textWin, (450 - textWin.get_width()/2, 200 - textWin.get_height()/2))
 
 
 	elif y + 40 >= treasureY and y + 40 <= treasureY + 40:
 		if x >= treasureX and x <= treasureX + 35:
-			screen.blit(textWin, (200, 200))
+			screen.blit(textWin, (450 - textWin.get_width()/2, 200 - textWin.get_height()/2))
 
 		elif x + 35 >= treasureX and x + 35 <= treasureX + 35:
-			screen.blit(textWin, (200, 200))
+			screen.blit(textWin, (450 - textWin.get_width()/2, 200 - textWin.get_height()/2))
 			
 
 	
