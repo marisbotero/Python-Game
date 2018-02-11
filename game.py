@@ -62,7 +62,8 @@ screen.blit(treasureImage, (treasureX, treasureY))
 
 #Text Win
 font = pygame.font.SysFont("arial", 30)
-textWin = font.render("Great Job", True, (0,0,0))
+level = 1
+
 
 
 frame = pygame.time.Clock()
@@ -90,6 +91,8 @@ while finished == False:#While our game is not finished
 	collisionTreasure,y = checkCollision(x,y,treasureX,treasureY)
 
 	if collisionTreasure == True:
+		level += 1
+		textWin = font.render("Great Job, the next level "+ str(level) , True, (0,0,0))
 		screen.blit(textWin, (350 - textWin.get_width()/2, 200 - textWin.get_height()/2))
 		pygame.display.flip()
 		frame.tick(1)
