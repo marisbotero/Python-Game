@@ -77,6 +77,7 @@ level = 1
 frame = pygame.time.Clock()
 
 collisionTreasure = False
+collisionEnemy = False
 movingRight = True
 
 
@@ -109,6 +110,7 @@ while finished == False:#While our game is not finished
 	screen.blit(enemyImage, (enemyX,enemyY))
 	#pygame.draw.rect(screen, color,rectOne)
 	collisionTreasure,y = checkCollision(x,y,treasureX,treasureY)
+	collisionEnemy,y = checkCollision(x,y, enemyX, enemyY)
 
 	if collisionTreasure == True:
 		level += 1
@@ -116,6 +118,10 @@ while finished == False:#While our game is not finished
 		screen.blit(textWin, (350 - textWin.get_width()/2, 200 - textWin.get_height()/2))
 		pygame.display.flip()
 		frame.tick(1)
+	#elif collisionEnemy == True:
+		
+
+
 
 
 
