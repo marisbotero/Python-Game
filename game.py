@@ -55,10 +55,14 @@ treasureImage = treasureImage.convert_alpha()
 
 enemyImage = pygame.image.load("enemy.png")
 enemyImage = pygame.transform.scale(enemyImage, (35,40))
-
+enemyImage = enemyImage.convert_alpha()
 
 treasureX = 350 -35/2
 treasureY = 50 
+
+
+enemyX = 50
+enemyY =  450
 
 
 
@@ -91,6 +95,7 @@ while finished == False:#While our game is not finished
 	screen.blit(backgroundImage, (0,0))
 	screen.blit(treasureImage, (treasureX, treasureY))
 	screen.blit(playerImage, (x,y))
+	screen.blit(enemyImage, (enemyX,enemyY))
 	#pygame.draw.rect(screen, color,rectOne)
 	collisionTreasure,y = checkCollision(x,y,treasureX,treasureY)
 
