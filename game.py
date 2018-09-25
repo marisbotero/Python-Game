@@ -62,7 +62,7 @@ treasureY = 50
 
 
 enemyX = 50
-enemyY =  450
+enemyY =  350 - 30
 
 
 
@@ -77,6 +77,7 @@ level = 1
 frame = pygame.time.Clock()
 
 collisionTreasure = False
+movingRight = True
 
 
 while finished == False:#While our game is not finished
@@ -86,6 +87,16 @@ while finished == False:#While our game is not finished
 
 	pressedKeys = pygame.key.get_pressed()
 	             #[....,UP,DOWN,LEFT,SPACE,...]
+	if enemyX >= 650-35:
+		movingRight = False
+	elif enemyX <= 30:
+		movingRight = True
+	if movingRight == True:
+		enemyX +=5
+	else:
+		enemyX -=5
+
+	
 	if pressedKeys [pygame.K_SPACE] == 1:
 		y -= 1
 	#rectOne = pygame.Rect(x,y,30,30)#x,y,width,height
