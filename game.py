@@ -53,6 +53,10 @@ treasureImage = pygame.transform.scale(treasureImage, (35,40))
 treasureImage = treasureImage.convert_alpha()
 
 
+enemyImage = pygame.image.load("enemy.png")
+enemyImage = pygame.transform.scale(enemyImage, (35,40))
+
+
 treasureX = 350 -35/2
 treasureY = 50 
 
